@@ -45,6 +45,10 @@ This is an example of running Gluu Server Docker Edition on a single VM.
 
         The output of this command is redirected to a file `vault_key_token.txt`. Secure this file as it contains recovery key and root token.
 
+    - Unseal Vault using the Useal Key 1 from `vault_key_token.txt`.
+        
+            docker exec -ti vault vault operator unseal <Unseal Key 1>
+            
     -   Login to Vault using root token:
 
             docker exec -ti vault vault login -no-print
